@@ -1,0 +1,15 @@
+.image{
+    background-image: url('../pexels-olly-3769714.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 70vh;
+}
+.name{
+    margin-top: -45px;
+    border:none;
+    background-color:#ffffff80;
+    align-items: start;
+    width: 100%;
+    padding: 12px;
+}

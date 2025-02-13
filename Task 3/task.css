@@ -1,0 +1,123 @@
+*{
+    font-family:Helvetica, sans-serif;
+}
+header{
+    background:green;
+    color: white;
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    justify-content: space-between;
+}
+nav a {
+    text-decoration: none;
+    padding-left: 10px;
+    padding-right: 10px;
+    color: white;
+}
+nav{
+    padding-right: 700px;
+}
+.logo{
+    padding-left: 100px;
+    font-size: x-large;
+    font-family: Arial, sans-serif;
+    padding-bottom: 10px;
+}
+.login{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+    border:none;
+    color: green;
+    background-color: white;
+}
+select{
+    margin: 5px;
+    padding: 5px;
+    border-radius: 20px;
+    border:none;
+    color: green;
+    background-color: white;
+    font-weight: bolder;
+}
+footer{
+    justify-content: space-between;
+    display: flex;
+}
+.form{
+    margin: 150px 100px 100px 100px;
+    border-radius: 40px;
+    background-color: rgba(255, 255, 255, 0.6);
+    padding: 30px;
+}
+article{
+    padding-top: 200px;
+    padding-left: 100px;
+    font-family: Helvetica, sans-serif;
+    font-size: 20px;
+}
+article p{
+    font-weight: bold;
+    font-size: 16px;
+    font-style: italic;
+}
+span{
+    font-family: "Londrina Outline", serif;
+    font-size: 100px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+label{
+    font-weight: bolder;
+    font-size: 12px;
+    margin-left:20px
+}
+input[type=text]{
+    border-radius: 20px;
+    border:none;
+    margin-left: 20px;
+    padding: 0px 20px 20px 0px;
+    width: 300px;
+    margin-bottom: 10px;
+}
+input[type=date]{
+    border-radius: 20px;
+    border:none;
+    margin-left: 20px;
+    padding: 10px 20px 10px 0px;
+    width: 125px;
+    text-align: center;
+    margin-bottom: 10px;
+    margin-top: 5px;
+}
+.form p{
+    padding-left: 20px; 
+    font-weight: bold;
+    margin-bottom: 30px;
+}
+label[for=Return]{
+    margin-left: 110px;
+}
+label[for=return]{
+    padding-right: 20px;
+}
+label[for=oneway]{
+    padding-right: 20px;
+}
+label[for=multicity]{
+    padding-right: 20px;
+}
+input[type=radio]{
+    margin-left:20px;
+}
+input[type=submit]{
+    margin-left: 20px; 
+    font-weight: bold;
+    color: white;
+    background-color: green;
+    border-radius: 40px;
+    margin-top: 20px;
+    padding:10px;
+    border: none;
+}

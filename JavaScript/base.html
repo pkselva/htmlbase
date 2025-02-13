@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h2>Activate Debugging</h2>
+
+    <p>F12 on your keyboard will activate debugging.</p>
+    <p>Then select "Console" in the debugger menu.</p>
+    <p>Then click Run again.</p>
+    <script>
+
+        // Common Variable
+        const obj = {name:'John', age:40, job:'Engineer'};
+
+        // Dot Notation
+        function dotNotation(){
+            console.log(obj.name);
+            console.log(obj.age);
+            console.log(obj.job);
+        }
+        // dotNotation();
+
+        // Bracket Notation
+        function bracketNotation(){
+            console.log(obj['name']);
+            console.log(obj['age']);
+            console.log(obj['job']);
+        }
+        // bracketNotation();
+
+        // Without Destructuring
+        function withoutDestructure(){
+            const name = obj.name;
+            const age = obj.age;
+            const job = obj.job;
+            console.log(name, age, job);
+            // console.log(name);
+            // console.log(age);
+            // console.log(job);
+        }
+        // withoutDestructure();
+
+        // Destructuring
+        function Destructure(){
+            const {name, age, job} = obj;
+            // console.log(name, age, job);
+            console.log(name);
+            console.log(age);
+            console.log(job);
+        }
+        Destructure();
+
+        // Optional Chaining
+        function optionalChaining(){
+
+            console.log(obj?.name);
+            console.log(obj?.address);
+
+            const user = {person:{name:'Alice'}};
+            console.log(user.person?.name);
+            console.log(user.car?.address);
+        }
+        // optionalChaining();
+
+        // Types
+        // Object Keys
+        function objectKeys(){
+            const keys = Object.keys(obj);
+            console.log(keys);;
+        }
+        // objectKeys();
+
+        // Object Values
+        function objectValues(){
+            const values = Object.values(obj);
+            console.log(values);
+        }
+        // objectValues();
+
+        // Object  Entries
+        function  objectEntries(){
+            const entries = Object.entries(obj);
+            console.log(entries);
+        }
+        // objectEntries();
+
+        // END
+    </script>
+</body>
+</html>
