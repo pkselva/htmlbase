@@ -1,0 +1,43 @@
+.image{
+    background-image: url("../Images/front-view-young-businesswoman-strict-clothes-black-jacket-posing-white-surface.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+}
+.logo{
+    width: 38px;
+    height: 38px;
+}
+.blue{
+    background-color: #101E65;
+}
+.text-blue{
+    color: #101E65;
+}
+.background{
+    background-color: #F5F5F5;
+}
+img{
+    width: 100%;
+    height: 100%;
+}
+.logoborder{
+    border: solid #101E65;
+    border-radius: 5px;
+}
+.hrline{ 
+    border: 3px solid #101E65;
+    border-radius: 5px;
+    width: 25%;
+}
+@media screen and (max-width: 329px) {
+    .headertext{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 991px) {
+    .hrline{
+        margin-inline: auto;
+    }
+}

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        try {
+            let result = 10 / 2; // No error, but division by zero
+            console.log(result);
+            
+            let num = undefined;
+            console.log(num.toUpperCase()); // Error: Cannot read property of undefined
+        } catch (error) {
+            console.log("Something went wrong!", error.message);
+        }
+
+
+
+        // /Using finally (Runs No Matter What)
+
+        try {
+            console.log("Start");
+            let x = y + 1; // Error (y is not defined)
+        } catch (error) {
+            console.log("Error:", error.message);
+        } finally {
+            console.log("This will always run!");
+        }
+
+
+        //3. Throwing Custom Errors (throw)
+
+        function checkAge(age) {
+            if (age < 18) {
+                throw new Error("You must be 18 or older.");
+            }
+            return "Access granted!";
+        }
+
+        try {
+            console.log(checkAge(11));
+        } catch (error) {
+            console.log("Error:", error.message);
+        }
+
+
+        // /Handling Promises with .catch()
+
+        fetch("https://invalid-url.com")
+        .then(response => response.json())
+        .catch(error => console.log("Fetch failed:", error.message));
+
+
+        //Handling Errors in async/await
+
+        async function fetchData() {
+            try {
+                let response = await fetch("https://fakestoreApi.com/users");
+                let data = await response.json();
+                console.log(data);
+            } catch (error) {
+                console.log("Error fetching data:", error.message);
+            }
+        }
+
+        fetchData();
+    </script>
+</body>
+</html>

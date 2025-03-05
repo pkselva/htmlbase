@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple CRUD Example</title>
+  <style>
+    /* body {
+      font-family: Arial, sans-serif;
+      margin: 20px;
+    }
+    .container {
+      max-width: 600px;
+      margin: auto;
+      text-align: center;
+    }
+    input {
+      padding: 8px;
+      width: 70%;
+      margin-right: 10px;
+    }
+    button {
+      padding: 8px 15px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    ul {
+      list-style: none;
+      padding: 0;
+    }
+    li {
+      margin: 10px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border: 1px solid #ddd;
+      padding: 8px;
+      border-radius: 5px;
+    }
+    .edit, .delete {
+      margin-left: 10px;
+      background-color: #f0ad4e;
+      color: white;
+    }
+    .delete {
+      background-color: #d9534f;
+    } */
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Simple CRUD App</h1>
+    <input type="text" id="itemInput" placeholder="Enter item..." />
+    <button onclick="addItem()">Add</button>
+    <ul id="itemList"></ul>
+  </div>
+
+  <script>
+    let items = []; // Store items here
+
+    function addItem() {
+      const input = document.getElementById('itemInput');
+      const itemText = input.value.trim();
+      console.log(itemText);
+      if (itemText) {
+        items.push(itemText); // Add item to array
+        console.log('Validating the value',itemText);
+        input.value = ''; // Clear input
+        displayItems(); // Refresh item list
+      }
+      console.log(itemText)
+    }
+
+    function displayItems() {
+      const list = document.getElementById('itemList');
+      list.innerHTML = ''; // Clear list before re-rendering // which is used to remove duplicate entries
+      items.forEach((item, index) => {
+        // console.log("Validating_Value",item);
+        // console.log("Validating_Index",index);
+        list.innerHTML += `
+          <li>
+            ${item}
+            <button class="edit" onclick="editItem(${index})">Edit</button>
+            <button class="delete" onclick="deleteItem(${index})">Delete</button>
+          </li>
+        `;
+      });
+    }
+
+
+    // displayItems--- Code Output Example:
+
+//     <ul id="itemList">
+//   <li>
+//     Apple
+//     <button class="edit" onclick="editItem(0)">Edit</button>
+//     <button class="delete" onclick="deleteItem(0)">Delete</button>
+//   </li>
+//   <li>
+//     Banana
+//     <button class="edit" onclick="editItem(1)">Edit</button>
+//     <button class="delete" onclick="deleteItem(1)">Delete</button>
+//   </li>
+//   <li>
+//     Cherry
+//     <button class="edit" onclick="editItem(2)">Edit</button>
+//     <button class="delete" onclick="deleteItem(2)">Delete</button>
+//   </li>
+// </ul>
+
+
+    function editItem(index) {
+      const newItem = prompt('Edit item:', items[index]);
+      if (newItem !== null && newItem.trim() !== '') {
+        items[index] = newItem; // Update item
+        displayItems(); // Refresh item list
+      }
+    }
+
+    function deleteItem(index) {
+      items.splice(index, 1); // Remove item from array
+      displayItems(); // Refresh item list
+    }
+  </script>
+</body>
+</html>

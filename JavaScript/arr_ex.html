@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Examples</title>
+</head>
+<body>
+    <script>
+        // Reverse a String
+
+        function reverseString(str) {
+            return str.split("").reverse().join("");
+        }
+
+        // console.log(reverseString("hello")); // Output: "olleh"
+
+
+        //2️⃣ Check if a String is a Palindrome
+
+
+        function isPalindrome(str) {
+            let reversed = str.split("").reverse().join("");
+            console.log(reversed);
+            return str === reversed;
+        }
+
+        // console.log(isPalindrome("education")); // Output: true
+        // console.log(isPalindrome("hello")); // Output: false
+
+
+        // 3️⃣ Find the Largest Number in an Array
+
+        // function findMax(arr) {
+        //     console.log(...arr)
+        //     return Math.max(...arr);
+        // }
+
+        // console.log(findMax([3, 7, 1, 9, 2])); // Output: 9
+
+
+        // 4️⃣ Find the Factorial of a Number
+
+
+        // function factorial(n) {
+        //     if (n === 0 || n === 1) return 1;
+        //     return n * factorial(n - 1);
+        // }
+
+        // console.log(factorial(5)); // Output: 120
+
+
+        // 5️⃣ Remove Duplicates from an Array
+
+        // function removeDuplicates(arr) {
+        //     return [...new Set(arr)];
+        // }
+
+        // console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+    </script>
+</body>
+</html>

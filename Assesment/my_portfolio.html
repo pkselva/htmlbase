@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <style>
+        body{
+            background-color: #f4f4f4;
+        }
+        .hero{
+            background: linear-gradient(#6a11cb,#2575fc);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+        }
+        img{
+            width: 150px;
+            border: 5px solid white;
+            border-radius: 100px;
+        }
+        .card{
+            transition: transform 0.3s ease-in-out;
+        }
+        .card:hover{
+            transform: scale(1.05);
+        }
+        .section { 
+            padding: 60px 20px; 
+        }
+        a{
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container">
+            <a class="navbar-brand text-white" href="#">Karthick Selvan</a>
+            <button class="navbar-toggler bg-body-tertiary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0 w-100 d-flex justify-content-end">
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#Home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#About Me">About Me</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#Skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#Projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-white" href="#Contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="Home" class="container-fluid text-center hero">
+        <div class="container p-5 text-white">
+            <img src="../Images/Karthick Selvan.jpeg" alt="Karthick Selvan">
+            <h2>Hello, I am <span class="fw-bold">Karthick Selvan P</span></h2>
+            <h5>Full Stack Developer | UI/UX Designer | Tech Enthusiast</h5>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="About Me" class="section container p-5 text-center">
+        <h2>About Me</h2>
+        <br>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Eius nesciunt fuga ipsa doloribus earum saepe, consequatur in dolore est quod, voluptatum expedita asperiores vel animi officiis explicabo iure maxime minus?</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="Skills" class="section bg-light text-center">
+        <div class="container">
+            <h2>Skills</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>Front-End</h5>
+                        <p>HTML, CSS, JavaScript, Bootstrap</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-md-0 mt-2">
+                    <div class="card p-3">
+                        <h5>Back-End</h5>
+                        <p>Node.js, Express.js, MongoDB</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-md-0 mt-2">
+                    <div class="card p-3">
+                        <h5>UI/UX Designing</h5>
+                        <p>Figma, Wireframing, Prototyping</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Project Section -->
+    <section id="Projects" class="section text-center">
+        <div class="container">
+            <h2>Projects</h2>
+            <div class="row mt-4">
+                <div class="col-md-4">
+                    <div class="card p-3">
+                        <h5>Food Delivery App</h5>
+                        <p>A sleek and responsive UI for food ordering.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-md-0 mt-2">
+                    <div class="card p-3">
+                        <h5>Game Marketplace</h5>
+                        <p>Buy & sell games with a seamless UX.</p>
+                    </div>
+                </div>
+                <div class="col-md-4 mt-md-0 mt-2">
+                    <div class="card p-3">
+                        <h5>Portfolio Website</h5>
+                        <p>This website showcasing my work and skills.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="Contact" class="section text-center bg-light">
+        <div class="container">
+            <h2>Contact</h2>
+            <div class="row mt-4">
+                <p>Feel free to reach out for collaborations or just a chat!</p>
+                <div>
+                    <a href="">E-MAIL</a>
+                    <a href="">LINKEDIN</a>
+                    <a href="">GITHUB</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- footer section -->
+    <footer class="container-fluid text-center p-3 text-white bg-dark">
+        <p>&copy; Karthick Selvan. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

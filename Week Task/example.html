@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Website</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <style>
+        .hero-section {
+            background-image: url('../Images/pexels-olly-3769714.jpg');
+            background-size: cover;
+            background-position: center;
+            height: 70vh;
+            color: white;
+            display: flex;
+            align-items: center;
+            text-align: center;
+        }
+        .feature-box {
+            padding: 20px;
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <header class="bg-danger text-white p-2 d-flex justify-content-between">
+        <div>
+            <span>Follow us:</span>
+            <i class="fa-brands fa-facebook-f px-2"></i>
+            <i class="fa-brands fa-twitter px-2"></i>
+        </div>
+        <div class="d-none d-md-flex">
+            <p class="px-3"><i class="fa-solid fa-phone"></i> Call Now: +123 4567 890</p>
+            <p class="px-3"><i class="fa-solid fa-envelope"></i> info@gmail.com</p>
+            <p class="px-3"><i class="fa-solid fa-location-dot"></i> 3rd Floor, Best World</p>
+        </div>
+    </header>
+    
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container">
+            <a class="navbar-brand fs-3 text-danger" href="#"><i class="fa-solid fa-graduation-cap"></i> COLLEGE</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Courses</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Events</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Pages</a></li>
+                    <li class="nav-item bg-danger"><a class="nav-link text-white" href="#">Admission Open</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <section class="hero-section d-flex flex-column justify-content-center align-items-center">
+        <h1>Education is the Best Key Success in Life</h1>
+        <p>Discover a world of knowledge and opportunities at our prestigious institution.</p>
+        <div>
+            <button class="btn btn-danger">Discover More <i class="fa-solid fa-arrow-right"></i></button>
+            <button class="btn btn-primary">Contact Us <i class="fa-solid fa-arrow-right"></i></button>
+        </div>
+    </section>
+    
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-4 feature-box bg-primary text-white">
+                <h4>Education Services</h4>
+                <p>Providing top-quality education with innovative learning methods.</p>
+                <a href="#" class="text-white">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="col-md-4 feature-box bg-danger text-white">
+                <h4>International Hubs</h4>
+                <p>Expanding global collaborations and offering cultural exchanges.</p>
+                <a href="#" class="text-white">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+            <div class="col-md-4 feature-box bg-primary text-white">
+                <h4>Bachelor’s and Master’s</h4>
+                <p>High-quality education with expert faculty and industry-oriented curriculum.</p>
+                <a href="#" class="text-white">Read More <i class="fa-solid fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

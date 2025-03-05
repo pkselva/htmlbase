@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Features</title>
+</head>
+<body>
+    <script>
+        
+        // // Asynchronous
+        // console.log("Order Burger...");
+
+        // // Simulating Delay
+        // setTimeout(() =>{
+        //     console.log("Cooking...")
+        // },3000); // Runs After 3 Seconds
+
+        // // setTimeout()
+        // setTimeout(() => {
+        //     console.log("Runs After 2 Seconds...");
+        // },2000);
+
+        // // setInterval()
+        // setInterval(() => {
+        //     console.log("Repeats every 1 Seconds...");
+        // },1000);
+
+        // // Callback in JavaScript
+        // cookFood = (callback) => {
+        //     console.log("Cooking Food...");
+
+        //     setTimeout(() =>{
+        //         console.log("Food is Ready...");
+        //         // setTimeout(() => {
+        //             callback(); //Call eatFood Function
+        //         // },4000);
+        //     },2000);
+        // }
+        
+        // eatFood = () => {
+        //     setTimeout(() => {
+        //         console.log("Eating Food...");
+        //     },2000)
+            
+        // }
+
+        // orderFood = () => {
+        //     setTimeout(() => {
+        //         console.log("Place Order....")
+        //     },2000)
+            
+        // }
+
+        // cookFood(eatFood);
+
+        // // Callback Hell in JavaScript
+        // console.log("Placing Food Order....");
+        // setTimeout(() => {
+        //     console.log("Restaurant Confirmed Order...");
+        //     setTimeout(() => {
+        //         console.log("Food is being prepared...");
+        //         setTimeout(() => {
+        //             console.log("Food is Packed...");
+        //             setTimeout(() => {
+        //                 console.log("Delivery person picked up the Order...");
+        //                 setTimeout(() => {
+        //                     console.log("Order Delivered to the Customer...");
+        //                 },1000);
+        //             },1000);
+        //         },1000);
+        //     },1000);
+        // },1000);
+
+        // // Promises
+        // let myPromise = new Promise((resolve,reject) => {
+        //     let success = false ;
+        //     if(success){
+        //         resolve("Its Working");
+        //     }
+        //     else{
+        //         reject("Its not Working");
+        //     }
+        // })
+
+        // myPromise
+        // .then(result => {
+        //     console.log(result);
+        // })
+        // .catch(error => {
+        //     console.log(error);
+        // })
+
+        // Use Promises to Avoid Callback Hell
+        // console.log("Placing Food Order...");
+        function orderFood(){
+            return new Promise ((resolve) => {
+                setTimeout(() => {
+                    console.log("Restaurant Confirmed Order...");
+                    resolve();
+                },1000);
+            });
+        }
+        function prepareFood(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Food is being prepared...");
+                    resolve();
+                },1000);
+            });
+        }
+        function packFood(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Food is Packed...");
+                    resolve();
+                },1000);
+            });
+        }
+        function deliverFood(){
+            return new Promise((resolve) => {
+                setTimeout(() => {
+                    console.log("Order Delivered to the Customer...");
+                    resolve();
+                },1000);
+            });
+        }
+
+        // // Using Promises (Chaining)
+        // orderFood()
+        // .then (prepareFood)
+        // .then (packFood)
+        // .then (deliverFood)
+        // .then (() => console.log("Enjoy your Meal..."));
+
+        // Async and Await(ES8)
+        // Without async/await (Using Promises and .then())
+        // fetch(`https://jsonplaceholder.typicode.com/users/1`)
+        // .then (response => response.json())
+        // .then (id => console.log(id.address.street))
+        // .catch (error => console.log(error))
+
+        // With async/await (Simplified and Cleaner)
+        async function fetchData(){
+            try{
+                let response = await fetch(`https://jsonplaceholder.typicode.com/users`)
+                let user = await response.json()
+                console.log(user[2].name);
+                // for (let i = 0; i < user.length; i++) {
+                //     console.log(user[i].email);
+                // }
+            }
+            catch(error){
+                console.log(error);
+            }
+        }
+        fetchData();    
+    </script>
+</body>
+</html>

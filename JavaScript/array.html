@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array</title>
+</head>
+<body>
+    <h2>Activate Debugging</h2>
+
+    <p>F12 on your keyboard will activate debugging.</p>
+    <p>Then select "Console" in the debugger menu.</p> 
+    <p>Then click Run again.</p>
+    <script>
+
+        // Common Array
+        let fruits = ["Apple", "Banana", "Orange"];
+
+        // push() // Add an Element at an end
+        // arrPush = (a) => { 
+        function arrPush(a){
+            fruits.push(a); 
+            console.log(fruits); // Output: ['Apple', 'Banana', 'Orange', 'Mango']
+        }
+        // arrPush("Mango");
+
+        // pop() // Removes the last Element
+        arrPop = () => {
+            let lastFruit = fruits.pop();
+            console.log(fruits); // Output: ['Apple', 'Banana']
+            console.log(lastFruit); // Output: Orange
+        }
+        // arrPop();
+
+        // unshift() // Add an Element at the Beginning
+        arrUnshift = () => {
+            fruits.unshift("Grapes");
+            console.log(fruits); // Output: ['Grapes', 'Apple', 'Banana', 'Orange']
+        }
+        // arrUnshift();
+
+        // shift() // Removes First Element
+        arrShift = () => {
+            let firstFruit = fruits.shift();
+
+            console.log(fruits); // Output: ['Banana', 'Orange']
+            console.log(firstFruit); // Output: Apple
+        }
+        // arrShift();
+
+        // // const vs let - Arrays and Objects :-----
+
+        // const name = "John";
+        // //name = "David"; // Error (const can't redeclare and reassign) 
+        // console.log(name); // Output: Error
+
+        // let name1 = "John";
+        // name1 = "David"; 
+        // console.log(name1); // Output: David
+
+        // // In arrays const can Redeclare
+        // const name2 = {name : "val", age : 20};
+        // name2.age = 30;
+        // console.log(name2); // Output: {name: 'val', age: 30}
+
+        // concat():
+        arrConcat = () => {
+            let arr1 = [1,2,3];
+            let arr2 = [4,5,6];
+            
+            let combined1 = arr1.concat(arr2);
+            let combined2 = arr2.concat(arr1);
+
+            console.log(combined1); // Output: [1, 2, 3, 4, 5, 6]
+            console.log(combined2); // Output: [4, 5, 6, 1, 2, 3]
+        }
+        // arrConcat();
+
+        // slice():
+        arrSlice = () => {
+            let fruits = ["Apple", "Banana", "Orange", "Grapes"];
+            let sliced = fruits.slice(2,3);
+
+            //Syntax: array.slice(startIndex,endIndex)
+
+            console.log(sliced); // Output: ['Orange']
+            console.log(fruits); // Output: ['Apple', 'Banana', 'Orange', 'Grapes']
+        }
+        // arrSlice();
+
+        
+        // splice():
+        // Update:
+        spliceUpdate = () => {
+            let fruits = ["Apple", " "Orange"];
+            let val = fruits.splice(1, 1, "Grapes", "Kiwi");
+Banana",
+            //Syntax: array.splice(index, count, item1, ....., itemX)
+
+            console.log(fruits); // Output: ['Apple', 'Grapes', 'Kiwi', 'Orange']
+            console.log(val); // Output: ['Banana']
+        }
+        spliceUpdate();
+
+        // Remove:
+        spliceRemove = () => {
+            let fruits = ["Apple", "Banana", "Orange", "Grapes"];
+            fruits.splice(1,2);
+            console.log(fruits); // Output: ['Apple', 'Grapes']
+        }
+        // spliceRemove();
+
+        // Add 
+        spliceAdd = () => {
+            let fruits = ["Apple", "Banana", "Orange"];
+            let val = fruits.splice(1, 0, "Grapes");
+
+            console.log(fruits); // Output: ['Apple', 'Grapes', 'Banana', 'Orange']
+            console.log(val); // Output: []
+        }
+        // spliceAdd();
+
+        // Reassign Common Variable
+        // fruits = ["Apple", "Banana", "Orange"];
+
+        // // indexOf()
+        arrIndexof = () => {
+            console.log(fruits.indexOf("Orange")); // Output : 2
+            console.log(fruits.indexOf("Grapes")); // Output : -1 (not found)
+        }
+        // arrIndexof()
+
+        // includes()
+        arrIncludes = () => {
+            console.log(fruits.includes("Banana")); // Output : true
+            console.log(fruits.includes("Grapes")); // Output : false
+        }
+        // arrIncludes();
+
+        // forEach()
+        arrForEach = () => {
+            let num = [1, 2, 3];
+            num.forEach(num => console.log(num * 2)); // Output: 2 4 6
+            
+            // Syntax: array.forEach(value,index)  // Returns Individual Value
+        }
+        // arrForEach()
+
+        // map() :
+        arrMap = () => {
+            let num = [1, 2, 3];
+            let double = num.map(num => num * 2);
+            console.log(double); // Output: [2, 4, 6]
+
+            //Syntax: array.map(value,index)  // forEach returns Individual Value but Map returns Array value
+        }
+        // arrMap();
+
+
+        // filter()
+        arrFilter = () => {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8];
+            let val = num.filter(num => num % 2 === 0);
+            console.log(val); // Output: [2, 4, 6, 8]
+        }
+        // arrFilter();
+
+        // reduce()
+        arrReduce = () => {
+            let numbers = [1, 2, 3, 4];
+            let sum = numbers.reduce((acc, num) => acc + num, 0);
+
+            // Syntax: array.reduce(function(total, currentValue, currentIndex, arr), initialValue)
+
+            console.log(sum); // Output: 10
+        }
+        arrReduce()
+
+        // sort():
+        arrSort = () => {
+            let fruits = ["Grapes", "Banana", "Apple"]
+            console.log(fruits.sort()); // Output: ["Apple", "Banana", "Grapes"]
+        }
+        // arrSort();
+
+        // reverse()
+        arrReverse = () => {
+            let num = [1, 2, 3, 4, 5, 6, 7, 8];
+            console.log(num.reverse()); // Output: [8, 7, 6, 5, 4, 3, 2, 1]
+        }
+        // arrReverse();
+
+        // join()
+        arrJoin = () => {
+            let words = ["Hello", "World"];
+            console.log(words.join(" "));  // Output: "Hello World"
+        }
+        // arrJoin();
+
+        // // Split function
+
+        // let a1="hello world"
+
+        
+        // console.log(a1.split())
+        // console.log(a1.split(""))
+        // console.log(a1.split(" "))
+
+        // Spread function 
+
+        let a=[1,2,3]
+        let b=[4,5,6]
+        let c=["hello","world"]
+        let d=[...a,...b,...c]
+        console.log(d)
+        console.log([...a,...b])
+        
+
+    </script>
+</body>
