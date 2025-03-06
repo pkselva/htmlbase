@@ -1,0 +1,182 @@
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Portfolio Website</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- <script src="script.js"></script>  -->
+    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
+
+</head>
+<body>
+        <nav>
+            <div class="nav_container">
+                <a href="index.html"><h4>My Portfolio</h4></a>
+                <ul class="nav_menu">
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <button id="open-menu-btn"><i class="uil uil-bars"></i></button>
+                <button id="close-menu-btn"><i class="uil uil-multiply"></i></button>
+            </div>
+        </nav>
+
+    <header>
+        <div class="container header_container">
+            <div class="header_left">
+                <h3 >Hello Guys!!</h3>
+                <h1 class="typewriter">It's Prathap Sharvesh Here..</h1>
+                <!-- <p>Aspiring Software Developer Fresher.</p> -->
+                 <div class="wrapper">
+                    <ol>
+                        <li><span> Passionate Software Developer</span></li>
+                        <li><span> Emerging Web Developer</span></li>
+                        <li><span> Part-time Sportsman</span></li>
+                        <li><span> Freelance Video Editor</span></li>
+                    </ol>
+                 </div>
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+            </div>
+
+            <div class="header_right">
+                <img class="header_image" src="images/profile.jpg" alt="Profile Picture">
+            </div>
+        </div>
+    </header>
+    <section id="about" class="about">
+        <div class="container about_container">
+            <div class="about_left">
+                <h2>About Me</h2>
+                <p>I am an ambitious and detail-oriented individual with a strong foundation in Electronics and Communication, coupled with a growing passion for software development. 
+                    My academic background has equipped me with a deep understanding of core technical concepts, including circuit design, signal processing, and embedded systems,
+                     which I now aim to integrate with my software development expertise. This unique blend of skills enables me to approach challenges from a multidimensional perspective, fostering innovative and efficient solutions.</p>
+                 <!-- <p>With a natural inclination toward problem-solving and analytical thinking, I thrive in dynamic environments that demand precision and creativity. My ability to break down complex problems into manageable components has been honed through rigorous academic projects and hands-on experiences. Whether debugging code, optimizing algorithms, or designing scalable systems, I am committed to delivering high-quality results that exceed expectations.
+                </p>    -->
+                  <p>  I am particularly drawn to the fast-paced and ever-evolving nature of the software industry. 
+                    My enthusiasm for learning new technologies and methodologies drives me to stay updated with the latest advancements, ensuring I remain adaptable a
+                    nd relevant in this competitive field. I take pride in my meticulous attention to detail, strong work ethic, and ability to collaborate effectively within diverse teams, 
+                    making me a valuable asset in achieving organizational goals. </p>
+                   <p> Eager to contribute meaningfully, I am seeking opportunities as a Software Developer where I can apply my technical skills, creativity,
+                     and passion for innovation to tackle challenging projects. My ultimate goal is to grow both personally and professionally while making a tangible impact on the success of the organization I serve.</p>
+                   <a href="ATS-C++.pdf" class="btn btn-primary">Check My Resume</a>
+            </div>
+         
+        </div>
+    </section>
+
+    <section id="education" class="education">
+        <div class="container education_container">
+            <h2>Education</h2>
+            <div class="education_item">
+                <h3>MEPCO SCHLENK ENGINEERING COLLEGE</h3>
+                <p>Bachelor of Engineering in Electronics and Communication</p>
+                <p><strong>Graduation:</strong> May 2024</p>
+                <p><strong>CGPA:</strong> 8.57/10.0</p>
+            </div>
+            <div class="education_item">
+                <h3>THE TVS SCHOOL</h3>
+                <p>Higher Secondary</p>
+                <p><strong>Graduation:</strong> May 2020</p>
+                <p><strong>Percentage:</strong> 85.83%</p>
+            </div>
+        </div>
+    </section>
+
+    
+    <section id="skills" class="skills">
+        <div class="container skills_container">
+            <h2>Skills</h2>
+            <div class="skills_list">
+                <article class="skill">
+                    <i class="uil uil-html5"></i>
+                    <h5>HTML</h5>
+                </article>
+                <article class="skill">
+                    <i class="uil uil-css3-simple"></i>
+                    <h5>CSS</h5>
+                </article>
+                <article class="skill">
+                    <i class="uil uil-java-script"></i>
+                    <h5>JavaScript</h5>
+                </article>
+                <article class="skill">
+                    <i class="uil uil-react"></i>
+                    <h5>React</h5>
+                </article>
+                <article class="skill">
+                    <i class="uil uil-database"></i>
+                    <h5>MySQL</h5>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container projects_container">
+            <h2>Projects</h2>
+            <div class="projects_list">
+                <article class="project">
+                    <img src="images/ann.png" alt="Project 1">
+                    <h4> PLANT DISEASE RECOGNITION USING DEEP LEARNING</h4>
+                    <p>Implemented a disease recognition system using Deep Learning, achieving a 95% accuracy in identifying diseases.</p>
+                    <a href="#" class="btn btn-primary">View Project</a>
+                </article>
+                <article class="project">
+                    <img src="images/tictactoegame.jpg" alt="Project 2">
+                    <h4> RESPONSIVE<br> TIC-TAC-TOE GAME</h4>
+                 <br>   <p> Designed a responsive 3x3 gameboard using CSSGrid for a clean and
+                        intuitive user interface.</p>
+                    <a href="#" class="btn btn-primary">View Project</a>
+                </article>
+                <article class="project">
+                    <img src="images/webdesign.jpg" alt="Project 3">
+                    <h4> EDUCATIONAL WEBSITE FOR ONLINE LEARNING</h4>
+                    <p> Built a mobile-friendly and responsive website using HTML5 and
+                        CSS3,ensuring compatibility across devices.</p>
+                    <a href="#" class="btn btn-primary">View Project</a>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container contact_container">
+            <h2>Contact Me</h2>
+            <p>If you'd like to collaborate or have any inquiries, feel free to reach out!</p>
+            <!-- <form action="contact.php" method="POST">
+                <input type="text" name="name" placeholder="Enter Your Name" required>
+                <input type="email" name="email" placeholder="Enter Your Email" required>
+                <textarea name="message" rows="5" placeholder="Enter the Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+            </form> -->
+            <div class="contact-items">
+                <li><i class="uil uil-envelope-alt">: sharveshs007@gmail.com</i></li>
+               <li><i class="uil uil-phone-alt">+91 96292 01793</i></li> 
+            </div>
+    
+        </div>
+    </section>
+
+    <footer>
+        <div class="container footer_container">
+            <p>&copy; 2025 [PRATHAP SHARVESH]  </p>
+            <ul class="footer_socials">
+                <li><a href="https://www.linkedin.com/in/prathap-sharvesh-s-729029304/" target="_blank"><i class="uil uil-linkedin-alt"></i></a></li>
+                <li><a href="https://github.com/SharveshS123" target="_blank"><i class="uil uil-github-alt"></i></a></li>
+                <li><a href="https://www.instagram.com/"  target="_blank"><i class="uil uil-instagram"></i></a></li>
+                <li><a href="https://www.whatsapp.com/" target="_blank"><i class="uil uil-whatsapp"></i></a></li>
+            </ul>
+        </div>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

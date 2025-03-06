@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>function</title>
+</head>
+<body>
+    <script>
+        function user(name,age){
+            this.name = name;
+            this.age = age;
+            this.greet = function(){ // Not Memory Efficient
+            // user.prototype.greet = function(){ // Memory Efficient
+                console.log(`My name is ${this.name} and age is ${this.age} years old`);
+            }
+        }
+
+        const user1 = new user("Karthi",21);
+        const user2 = new user("Selvan",22);
+
+        console.log(user1.greet === user2.greet); // To check whether Memory Efficient or not
+
+        user1.greet();
+        user2.greet();
+
+        // class User{
+        //     constructor(name,age){
+        //         this.name = name;
+        //         this.age = age;
+        //     }
+        //     sayHello(){
+        //         console.log(`My name is ${this.name} and I am ${this.age} years old`);
+        //     }
+        // }
+        // class data extends User{
+        //     constructor(name,age,job){
+        //         super(name,age);
+        //         this.job = job;
+        //     }
+        //     greet(){
+        //         console.log(`I am a ${this.job}`);
+        //     }
+        // }
+
+        // const user1 = new data("Karthi", 22, 'Full Stack Developer');
+
+        // user1.sayHello();
+        // user1.greet();
+
+        // Call Back
+
+        function cookFood(callback){
+            console.log("Cooking Food....");
+
+            setTimeout(() => {
+                console.log("Food is Ready...");
+                // setInterval(() => {
+                //     callback();
+                // },2000)
+            },2000)
+        }
+        function eatFood(){
+            console.log("Eating Food...")
+            console.log("Yummy")
+        }
+
+        cookFood(eatFood);
+    </script>
+</body>
+</html>

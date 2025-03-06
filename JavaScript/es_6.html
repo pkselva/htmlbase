@@ -72,24 +72,25 @@
         //     },1000);
         // },1000);
 
-        // // Promises
-        // let myPromise = new Promise((resolve,reject) => {
-        //     let success = false ;
-        //     if(success){
-        //         resolve("Its Working");
-        //     }
-        //     else{
-        //         reject("Its not Working");
-        //     }
-        // })
+        // Promises
+        let myPromise = new Promise((resolve,reject) => {
+            let success = true;
+            if(success){
+                console.log("It's Working");
+            }
+            else{
+                console.log("It's not woking");
+            }
+        });
 
-        // myPromise
-        // .then(result => {
-        //     console.log(result);
-        // })
-        // .catch(error => {
-        //     console.log(error);
-        // })
+        myPromise
+        .then(user = () => {
+            console.log(user);
+        })
+        .catch(error = () =>{
+            console.log(error)
+        })
+
 
         // Use Promises to Avoid Callback Hell
         // console.log("Placing Food Order...");
@@ -126,12 +127,12 @@
             });
         }
 
-        // // Using Promises (Chaining)
-        // orderFood()
-        // .then (prepareFood)
-        // .then (packFood)
-        // .then (deliverFood)
-        // .then (() => console.log("Enjoy your Meal..."));
+        // Using Promises (Chaining)
+        orderFood()
+        .then (prepareFood)
+        .then (packFood)
+        .then (deliverFood)
+        .then (() => console.log("Enjoy your Meal..."));
 
         // Async and Await(ES8)
         // Without async/await (Using Promises and .then())
@@ -145,7 +146,7 @@
             try{
                 let response = await fetch(`https://jsonplaceholder.typicode.com/users`)
                 let user = await response.json()
-                console.log(user[2].name);
+                // console.log(user[2].name);
                 // for (let i = 0; i < user.length; i++) {
                 //     console.log(user[i].email);
                 // }

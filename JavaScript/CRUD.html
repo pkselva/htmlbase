@@ -8,50 +8,82 @@
     <script src="../bootstrap-5.3.3-dist/js/bootstrap.js"></script>
 </head>
 <body>
-    <div class="container">
-        <input type="text" id="inputList" placeholder="Enter the Items...">
-        <button onclick="addItems()">ADD</button>
-        <ul id="itemList"></ul>
-    </div>     
+    <div class="container text-center mt-5">
+        <h2>To-Do Table</h2>
+        <div class="d-flex mt-4 justify-content-center">
+            <div class="col-5">
+                <input type="text" id="inputItems" placeholder="Enter the Items..." class="form-control">
+            </div>
+            <div class="col-5 ms-md-4">
+                <input type="date" id="inputDate" class="form-control">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-primary px-5" onclick="addItems()">ADD</button>
+            </div>
+        </div>
+        <table class="table table-bordered mt-4">
+            <thead class="table-dark">
+                <tr>
+                    <th>#</th>
+                    <th>NAME</th>
+                    <th>DATE</th>
+                    <th>ACTION</th>
+                </tr>
+            </thead>
+            <tbody id="itemTable"></tbody>
+        </table>
+    </div>
+
     <script>
+
         const list = [];
 
         function addItems(){
-            const input = document.getElementById("inputList");
+            const input = document.getElementById("inputItems");
             const inputList = input.value.trim();
-            if(inputList){
-                list.push({text:inputList,complete:false});
-                console.log(list);
+            const date = document.getElementById("inputDate");
+            const dateList = date.value;
+            if( inputList && dateList){
+                list.push({ name:inputList, date:dateList, completed:false});
                 input.value = "";
+                date.value = "";
                 displayItems();
+            }
+            else{
+                alert("Enter the both values")
             }
         }
 
         function displayItems(){
-            const listItems = document.getElementById("itemList");
-            listItems.innerHTML = "";
+            const tableItems = document.getElementById("itemTable");
+            tableItems.innerHTML = "";
             list.forEach((value,index) => {
-                console.log(value.text,value.complete,index)
-                listItems.innerHTML += `
-                <li>
-                    <span class="${value.complete ? "text-decoration-line-through" : ""}">${value.text}</span>
-                    <button onclick="checkItems(${index})">CHECK</button>
-                    <button onclick="editItems(${index})">EDIT</button>
-                    <button onclick="deleteItems(${index})">DELETE</button>
-                </li>`
-            })
+                tableItems.innerHTML += `
+                <tr>
+                    <td>${index+1}</td>
+                    <td class="${value.completed ? "text-decoration-line-through":""}">${value.name}</td>
+                    <td>${value.date}</td>
+                    <td>
+                        <button class="btn btn-success" onclick="toggleItems(${index})">Check</button>
+                        <button class="btn btn-warning" onclick="editItems(${index})">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItems(${index})">Delete</button>
+                    </td>
+                </tr>`
+            });
         }
-
-        function checkItems(index){
-            list[index].complete = !list[index].complete;
+        
+        function toggleItems(index){
+            list[index].completed = !list[index].completed;
             displayItems();
         }
 
         function editItems(index){
-            const newItem = prompt("Enter new Item...",list[index].text);
-            if(newItem !== null && newItem.trim() !== ""){
-                list[index].text = newItem;
-                displayItems()
+            const newItem = prompt("Enter new Item: ", list[index].name);
+            const newDate = prompt("Enter new Date: ", list[index].date);
+            if(newItem !== null && newDate !== null && newItem.trim() !== "" && newDate.trim() !== ""){
+                list[index].name = newItem;
+                list[index].date = newDate;
+                displayItems();
             }
         }
 
