@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD with Insert & Inline Edit</title>
+    <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="../bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container mt-4">
+        <h2 class="text-center">Task Manager with Insert & Inline Edit</h2>
+        <div class="mb-3">
+            <input type="text" id="inputList" class="form-control w-50 d-inline" placeholder="Enter the Item">
+            <input type="number" id="insertIndex" class="form-control w-25 d-inline" placeholder="Index (Optional)">
+            <button class="btn btn-primary" onclick="addItems()">ADD</button>
+        </div>
+        <ul id="itemList" class="list-group"></ul>
+    </div>     
+
+    <script>
+        const list = [];
+
+        function addItems() {
+            const input = document.getElementById("inputList").value.trim();
+            if (input) {
+                list.push({ text: input, complete: false, editing: false });
+                document.getElementById("inputList").value = "";
+                displayItems();
+            } else {
+                alert("Please enter an item.");
+            }
+        }
+
+        function displayItems() {
+            const listItems = document.getElementById("itemList");
+            listItems.innerHTML = "";
+            list.forEach((value, index) => {
+                listItems.innerHTML += `
+                <li class="list-group-item d-flex justify-content-between align-items-center">
+                    ${value.editing 
+                        ? `<input type="text" id="editInput-${index}" class="form-control w-50 d-inline" value="${value.text}">
+                           <button class="btn btn-success btn-sm" onclick="saveEdit(${index})">SAVE</button>`
+                        : `<span class="${value.complete ? "text-decoration-line-through" : ""}">${index + 1}. ${value.text}</span>
+                           <div>
+                               <button class="btn btn-success btn-sm" onclick="checkItems(${index})">CHECK</button>
+                               <button class="btn btn-warning btn-sm" onclick="editItems(${index})">EDIT</button>
+                               <button class="btn btn-danger btn-sm" onclick="deleteItems(${index})">DELETE</button>
+                           </div>`
+                        }
+                </li>`;
+            });
+        }
+
+        function checkItems(index) {
+            list[index].complete = !list[index].complete;
+            displayItems();
+        }
+
+        function editItems(index) {
+            list[index].editing = true;
+            displayItems();
+        }
+
+        function saveEdit(index) {
+            const newValue = document.getElementById("editInput-" + index).value.trim();
+            if (newValue) {
+                list[index].text = newValue;
+                list[index].editing = false;
+                displayItems();
+            } else {
+                alert("Item cannot be empty.");
+            }
+        }
+
+        function deleteItems(index) {
+            list.splice(index, 1);
+            displayItems();
+        }
+    </script>
+</body>
+</html>

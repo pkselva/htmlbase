@@ -22,7 +22,7 @@
             console.log(obj.age);
             console.log(obj.job);
         }
-        // dotNotation();
+        dotNotation();
 
         // Bracket Notation
         function bracketNotation(){
@@ -30,7 +30,7 @@
             console.log(obj['age']);
             console.log(obj['job']);
         }
-        // bracketNotation();
+        bracketNotation();
 
         // Without Destructuring
         function withoutDestructure(){
@@ -120,8 +120,8 @@
             this.name = name;
             this.age = age;
             this.exp = exp;
-            // this.intro = function(){
-            jobEmployee.prototype.intro = function(){
+            this.intro = function(){
+            // jobEmployee.prototype.intro = function(){
                 console.log("I am "+this.name+", "+this.age+" years old and I have "+this.exp+" years experience.");
             }
         };
@@ -132,10 +132,10 @@
 
         // console.log(emp1.intro === emp2.intro);
 
-        
-        // emp1.intro();
-        // emp2.intro();
-        // emp3.intro();
+        console.log(emp1.age)
+        emp1.intro();
+        emp2.intro();
+        emp3.intro();
 
         const multiply = (a,b) => a*b;
         // console.log(multiply(15,10));
@@ -184,8 +184,10 @@
 
         let num = [10,20,30,40,50];
         console.log(num[2]);
-
-        let add = (a,b) =>  a+b;
+        function add(a,b){
+        // let add = (a,b) => {
+            return a+b;
+        } 
         b=add(9,8)
         console.log(b);
         

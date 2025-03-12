@@ -4,6 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Simple CRUD Example</title>
+  <link rel="stylesheet" href="../bootstrap-5.3.3-dist/css/bootstrap.css">
   <style>
     /* body {
       font-family: Arial, sans-serif;
@@ -28,12 +29,12 @@
     }
     button:hover {
       background-color: #0056b3;
-    }
-    ul {
+    } */
+    /* ul {
       list-style: none;
       padding: 0;
-    }
-    li {
+    } */
+    /* li {
       margin: 10px 0;
       display: flex;
       justify-content: space-between;
@@ -49,82 +50,67 @@
     }
     .delete {
       background-color: #d9534f;
-    } */
+    } */ 
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Simple CRUD App</h1>
-    <input type="text" id="itemInput" placeholder="Enter item..." />
-    <button onclick="addItem()">Add</button>
-    <ul id="itemList"></ul>
+  <div class="container text-center mt-5">
+    <h2>To-Do List</h2>
+    <div class="row">
+      <div class="col-11">
+        <input type="text" class="form-control" id="inputItem" placeholder="Enter the Items...">
+      </div>
+      <div class="col-1">
+        <button class="btn btn-primary" onclick="addItems()">ADD</button>
+      </div>
+    </div>
+    <ul class="list" id="itemList"></ul>
   </div>
-
   <script>
-    let items = []; // Store items here
+    let list=[];
 
-    function addItem() {
-      const input = document.getElementById('itemInput');
-      const itemText = input.value.trim();
-      console.log(itemText);
-      if (itemText) {
-        items.push(itemText); // Add item to array
-        console.log('Validating the value',itemText);
-        input.value = ''; // Clear input
-        displayItems(); // Refresh item list
+    function addItems(){
+      const input = document.getElementById("inputItem");
+      const inputList = input.value.trim();
+      if(inputList){
+        list.push({text:inputList,complete:false});
+        input.value = "";
+        displayItems();
       }
-      console.log(itemText)
     }
 
-    function displayItems() {
-      const list = document.getElementById('itemList');
-      list.innerHTML = ''; // Clear list before re-rendering // which is used to remove duplicate entries
-      items.forEach((item, index) => {
-        // console.log("Validating_Value",item);
-        // console.log("Validating_Index",index);
-        list.innerHTML += `
-          <li>
-            ${item}
-            <button class="edit" onclick="editItem(${index})">Edit</button>
-            <button class="delete" onclick="deleteItem(${index})">Delete</button>
-          </li>
-        `;
+    function displayItems(){
+      const listItem = document.getElementById("itemList");
+      listItem.innerHTML = "";
+      list.forEach((value,index) => {
+        listItem.innerHTML += `
+        <li class="list-group-item d-flex justify-content-between align-items-center mt-3 border p-2 rounded-2">
+          <span class="${value.complete ? "text-decoration-line-through":""}">${value.text}</span>
+          <div>
+            <button class="btn btn-success" onclick="checkItems(${index})">CHECK</button>
+            <button class="btn btn-warning" onclick="editItems(${index})">EDIT</button>
+            <button class="btn btn-danger" onclick="deleteItems(${index})">DELETE</button>
+          </div>
+        </li>`
       });
     }
 
+    function checkItems(index){
+      list[index].complete = !list[index].complete;
+      displayItems();
+    }
 
-    // displayItems--- Code Output Example:
-
-//     <ul id="itemList">
-//   <li>
-//     Apple
-//     <button class="edit" onclick="editItem(0)">Edit</button>
-//     <button class="delete" onclick="deleteItem(0)">Delete</button>
-//   </li>
-//   <li>
-//     Banana
-//     <button class="edit" onclick="editItem(1)">Edit</button>
-//     <button class="delete" onclick="deleteItem(1)">Delete</button>
-//   </li>
-//   <li>
-//     Cherry
-//     <button class="edit" onclick="editItem(2)">Edit</button>
-//     <button class="delete" onclick="deleteItem(2)">Delete</button>
-//   </li>
-// </ul>
-
-
-    function editItem(index) {
-      const newItem = prompt('Edit item:', items[index]);
-      if (newItem !== null && newItem.trim() !== '') {
-        items[index] = newItem; // Update item
-        displayItems(); // Refresh item list
+    function editItems(index){
+      const newItem = prompt("Enter new Item: ", list[index].text);
+      if(newItem !== null && newItem.trim() !== ""){
+        list[index].text = newItem;
+        displayItems()
       }
     }
 
-    function deleteItem(index) {
-      items.splice(index, 1); // Remove item from array
-      displayItems(); // Refresh item list
+    function deleteItems(index){
+      list.splice(index,1);
+      displayItems()
     }
   </script>
 </body>

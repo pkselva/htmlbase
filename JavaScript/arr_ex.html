@@ -7,40 +7,71 @@
 </head>
 <body>
     <script>
-        // Reverse a String
+        //1️⃣ Reverse a String
 
         function reverseString(str) {
             return str.split("").reverse().join("");
         }
 
         // console.log(reverseString("hello")); // Output: "olleh"
+        
+        // Reverse a String (Without Inbuild)
 
+        function reverse(str){
+            let reversed = "";
+            for(let i = str.length - 1; i>=0; i--){
+                reversed += str[i];
+            }
+            return reversed;
+        }
+
+        // console.log(reverse("Karthick")); // Output: kcihtraK
 
         //2️⃣ Check if a String is a Palindrome
 
 
         function isPalindrome(str) {
             let reversed = str.split("").reverse().join("");
-            console.log(reversed);
             return str === reversed;
         }
 
-        // console.log(isPalindrome("education")); // Output: true
+        // console.log(isPalindrome("madam")); // Output: true
         // console.log(isPalindrome("hello")); // Output: false
+
+        // Check if a String is a Palindrome (Without inbuild)
+
+        function palindrome(str){
+            let reversed = "";
+            for(let i = str.length - 1; i>=0; i--){
+                reversed += str[i];
+            }
+            return reversed == str;
+        }
+
+        // console.log(palindrome("hello")); // Output: false
+        // console.log(palindrome("malayalam")); // Output: true
 
 
         // 3️⃣ Find the Largest Number in an Array
 
-        // function findMax(arr) {
-        //     console.log(...arr)
-        //     return Math.max(...arr);
-        // }
+        function findMax(arr) {
+            return Math.max(...arr);
+        }
 
         // console.log(findMax([3, 7, 1, 9, 2])); // Output: 9
 
+        function maxNum(arr){
+            let max = arr[0] ;
+            for (let i = 0; i < arr.length; i++){
+                if(arr[i] > max){
+                    max = arr [i];
+                }
+            }
+            return max;
+        }
+        // console.log(maxNum([24,78,12,46,39,8])); // Output: 78
 
-        // 4️⃣ Find the Factorial of a Number
-
+        // /4️⃣ Find the Factorial of a Number
 
         // function factorial(n) {
         //     if (n === 0 || n === 1) return 1;
@@ -50,13 +81,95 @@
         // console.log(factorial(5)); // Output: 120
 
 
-        // 5️⃣ Remove Duplicates from an Array
+        // /5️⃣ Remove Duplicates from an Array
 
-        // function removeDuplicates(arr) {
-        //     return [...new Set(arr)];
+        // function removeDuplicates(val) {
+        //     return [...new Set(val)];
         // }
 
         // console.log(removeDuplicates([1, 2, 2, 3, 4, 4, 5])); // Output: [1, 2, 3, 4, 5]
+
+
+        //6️⃣ Find the Missing Number in an Array
+
+        // function findMissingNumber(arr) {
+        //     let n = arr.length + 1;
+        //     let expectedSum = (n * (n + 1)) / 2;   
+        //     //   sum of the first n natural numbers without using loops or recursion.
+        //     let actualSum = arr.reduce((sum, num) => sum + num, 0);
+        //     return expectedSum - actualSum;
+        // }
+
+        // console.log(findMissingNumber([1, 2, 4, 5, 6])); // Output: 3
+
+
+
+        //7️⃣ Count the Occurrences of Each Element in an Array
+
+        // function countOccurrences(arr) {
+        //     let count = {};
+        //     arr.forEach(num => count[num] = (count[num] || 0) + 1);
+        //     return count;
+        // }
+
+
+        // console.log(countOccurrences([1, 2, 2, 3, 3, 3])); 
+        // Output: {1: 1, 2: 2, 3: 3}
+
+
+        // let arr = [1, 2, 2, 3, 3, 3,4,4,4,4,4,4,4,4];
+
+        // let count = {};
+
+        // arr.forEach((num) => {
+        //     if(count[num] === undefined){
+        //         count[num] = 1
+        //     }else{
+        //         count[num]++
+        //     }
+            
+        // })
+
+        // console.log(count)
+
+
+
+        //8️⃣ Find the First Non-Repeating Character in a String
+
+
+        // function firstNonRepeatingChar(str) {
+        //     for (let char of str) {
+        //         if (str.indexOf(char) === str.lastIndexOf(char)) {
+        //             return char;
+        //         }
+        //     }
+        //     return null;
+        // }
+
+        // console.log(firstNonRepeatingChar("aabbcde")); // Output: "c"
+
+
+
+        //9️⃣ Merge Two Sorted Arrays
+
+
+        // function mergeSortedArrays(arr1, arr2) {
+        //     return [...arr1, ...arr2].sort((a, b) => a - b); 
+        // }
+
+        // console.log(mergeSortedArrays([1, 3, 5], [2, 4, 6])); 
+        // // Output: [1, 2, 3, 4, 5, 6]
+
+
+        //🔟 Find the Second Largest Number in an Array
+
+        // function secondLargest(arr) {
+        //     let uniqueArr = [...new Set(arr)]; // Remove duplicates
+        //     uniqueArr.sort((a, b) => b - a);  // Sort in descending order
+        //     return uniqueArr[1] || null; // Return second element
+        // }
+
+        // console.log(secondLargest([2, 1, 4, 2, 5, 5])); // Output: 4
     </script>
 </body>
 </html>

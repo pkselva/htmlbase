@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="./bootstrap-5.3.3-dist/css/bootstrap.css">
+    <script src="./bootstrap-5.3.3-dist/js/bootstrap.js"></script>
+</head>
+<body>
+    <div class="container text-center mt-5">
+        <h2>To-Do List</h2>
+        <div class="row mt-4">
+            <div class="col-11">
+                <input type="text" class="form-control" id="inputItem" placeholder="Enter the Items..">
+            </div>
+            <div class="col-1">
+                <button class="btn btn-primary" onclick="addItems()">ADD</button>
+            </div>
+        </div>
+        <ul class="list-group mt-4" id="itemList"></ul>
+    </div>
+
+    <script>
+        let list = [];
+        
+        function addItems(){
+            const input = document.getElementById("inputItem");
+            const inputList = input.value.trim();
+            if(inputList){
+                list.push({text:inputList, completed:false});
+                input.value = "";
+                displayItems();
+            }
+            else{
+                alert("Enter the value");
+            }
+        }
+        function displayItems(){
+            const listItems = document.getElementById("itemList");
+            listItems.innerHTML = "";
+            list.forEach((value,index) => {
+                listItems.innerHTML += `
+                <li class="list-group-item d-flex justify-content-between align-items-center ">
+                    <span class="${value.completed ? "text-decoration-line-through":""}">${value.text}</span>
+                    <div>
+                        <button class="btn btn-success" onclick="checkItems(${index})">Check</button>
+                        <button class="btn btn-warning" onclick="editItems(${index})">Edit</button>
+                        <button class="btn btn-danger" onclick="deleteItems(${index})">Delete</button>
+                    </div>
+                </li>`
+            });
+        }
+
+        function checkItems(index){
+            list[index].completed = !list[index].completed;
+            displayItems();
+        }
+
+        function editItems(index){
+            const newItem = prompt("Enter new Item: ", list[index].text);
+            if(newItem !== null && newItem.trim() !== ""){
+                list[index].text = newItem;
+                displayItems();
+            }
+        }
+
+        function deleteItems(index){
+            list.splice(index,1);
+            displayItems();
+        }
+    </script>
+</body>
+</html>
